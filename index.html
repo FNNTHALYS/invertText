@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Invertendo um texto</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+
+    <body>
+        <h1>Inverter caracteres de um texto</h1>
+        <label for="input">Digite um texto:</label>
+        <input type="text" id="input">
+        <button onclick="inverter()">Inverter</button>
+        <p id="output"></p>
+    </body>
+
+    <script>
+
+        function invertText(aString) {
+
+                let nString = '';
+
+                for (let i = aString.length - 1; i >= 0; i--) {
+                    nString += aString[i];
+                }
+
+                return nString;
+                
+            }
+
+        function inverter() {
+            const input = document.getElementById('input');
+            const output = document.getElementById('output');
+            const aString = input.value;
+            const nString = invertText(aString);
+
+            if (aString === "") {
+
+                alert ("Digite um texto no campo.");
+
+            } else {
+
+            output.textContent = `Texto invertido: ${nString}`;
+        }
+    }
+    </script>
+
+</html>
